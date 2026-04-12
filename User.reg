@@ -1,0 +1,29 @@
+Windows Registry Editor Version 5.00
+
+[HKey_Current_User\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"AppsUseLightTheme"=dword:00000000
+"SystemUsesLightTheme"=dword:00000000
+
+[HKey_Current_User\Software\Wine]
+"ThemeEngine"="GTK"
+
+[HKey_Current_User\Software\Wine\Direct3D]
+"CSMT"=dword:00000001
+"Renderer"="Vulkan"
+"Shader_Backend"="GLSL"
+"VideoMemorySize"=dword:00002000
+
+[HKey_Current_User\Software\Wine\DLLOverrides]
+"*ddraw"="native"
+"*lossless"="native"
+
+[HKey_Current_User\Software\Wine\Drivers]
+"Graphics"="X11"
+
+[HKey_Current_User\Software\Wine\DXVA2]
+"Backend"="va"
+
+[HKey_Current_User\Software\Wine\X11 Driver]
+"Decorated"="Y"
+"Managed"="Y"
+"UseEGL"="Y"
