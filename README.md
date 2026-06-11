@@ -4,6 +4,10 @@ Zestaw skryptów w Bashu i plików konfiguracyjnych do optymalizacji Linuxa. Cel
 
 Projekt powstał dla dystrybucji CachyOS pod moją konfigurację sprzętową (AMD, Radeon RX 7600). Można go łatwo zmodyfikować pod inne podzespoły.
 
+## O procesie tworzenia (AI-Assisted Development)
+
+Architektura systemu, logika biznesowa oraz struktura przepływu danych zostały zaprojektowane autorsko. Sam kod źródłowy został wygenerowany, debugowany i zoptymalizowany przy wykorzystaniu technik Prompt Engineeringu oraz modeli LLM. Projekt stanowi praktyczny przykład nowoczesnego podejścia AI-Assisted Development, gdzie sztuczna inteligencja pełni rolę wykonawczą dla zdefiniowanych założeń inżynieryjnych.
+
 ## Co to potrafi
 
 * **Zarządzanie wydajnością:** Automatyczna zmiana trybu pracy procesora (performance/powersave). Optymalizacja pamięci (swappiness, max_map_count).
