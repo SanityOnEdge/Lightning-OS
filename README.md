@@ -11,6 +11,13 @@ Projekt powstał dla dystrybucji CachyOS pod moją konfigurację sprzętową (AM
 * **"Windows like expierence":** Integracja z menu kontekstowym. Pozwala odpalać instalatory `.exe` przez Wine bezpośrednio z prawego przycisku myszy. Działa z większością gier.
 * **Automatyzacja systemu:** Szybka instalacja zależności. Automatyczna konfiguracja uprawnień, pliku fstab oraz struktury w `/opt/`.
 * **Kopia zapasowa wyglądu:** Szybki zapis i przywracanie pełnej konfiguracji wizualnej (dotfiles, KDE Plasma, Alacritty).
+* 
+## Integracja z Lossless Scaling (LSFG)
+
+System posiada wbudowaną obsługę generowania klatek przez Lossless Scaling wewnątrz wrappera `lightning-run`. Ze względów licencyjnych pliki `.dll` nie są dołączone do projektu.
+
+**Jak z tego skorzystać:**
+Wystarczy, że przed uruchomieniem instalatora `Setup-Lightning.sh` wrzucisz swoje pliki `Lossless.dll` oraz `DDraw.dll` do głównego folderu pobranego repozytorium. Skrypt instalacyjny sam skopiuje je do struktury systemowej (`/opt/`), a wrapper automatycznie zintegruje je z grami.
 
 ## Główne pliki
 
