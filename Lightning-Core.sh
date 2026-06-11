@@ -5,8 +5,7 @@ STATUS_FILE="/tmp/lightning_status"
 start_turbo() {
     if [[ ! -f $STATUS_FILE ]] || [[ $(cat $STATUS_FILE) != "LIGHTNING: ON" ]]; then
         echo "LIGHTNING: ON" > $STATUS_FILE
-        nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=1" > /dev/null 
-        cpupower frequency-set --governor performance > /dev/null 
+        cpupower frequency-set --governor performance > /dev/null 2>&1
         sysctl -w vm.max_map_count=2147483642 > /dev/null
         sysctl -w vm.swappiness=10 > /dev/null
     fi
@@ -15,8 +14,7 @@ start_turbo() {
 stop_turbo() {
     if [[ ! -f $STATUS_FILE ]] || [[ $(cat $STATUS_FILE) != "LIGHTNING: OFF" ]]; then
         echo "LIGHTNING: OFF" > $STATUS_FILE
-        nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=0" > /dev/null
-        cpupower frequency-set --governor powersave > /dev/null
+        cpupower frequency-set --governor powersave > /dev/null 2>&1
     fi
 }
 

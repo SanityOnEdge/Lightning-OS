@@ -1,0 +1,47 @@
+[1fa967d9-a89e-4ecd-af4a-5f8cfdf45513]
+Description=System-Monitor-Btop
+position=960,0
+positionrule=2
+screen=1
+screenrule=2
+size=960,1080
+sizerule=2
+title=System-Monitor-Btop
+titlematch=1
+types=1
+wmclass=konsole org.kde.konsole
+wmclasscomplete=true
+wmclassmatch=1
+
+[5607bbb9-77de-4bf1-9ec3-dfc9211e9220]
+Description=Ustawienia programu dla btop-monitor
+below=true
+belowrule=2
+position=960,0
+positionrule=2
+size=960,1080
+sizerule=2
+wmclass=alacritty btop-monitor
+wmclasscomplete=true
+wmclassmatch=1
+
+[66614240-fb47-4691-825f-dfe4b537b9ce]
+screenrule=2
+titlematch=1
+wmclasscomplete=true
+
+[General]
+count=3
+rules=5607bbb9-77de-4bf1-9ec3-dfc9211e9220,1fa967d9-a89e-4ecd-af4a-5f8cfdf45513,a785b73c-ee13-4724-8bd1-dc0337925070
+
+[a785b73c-ee13-4724-8bd1-dc0337925070]
+Description=Ustawienia programu dla Alacritty
+position=0,0
+positionrule=2
+screen=1
+screenrule=2
+size=960,1080
+sizerule=2
+wmclass=alacritty Alacritty
+wmclasscomplete=true
+wmclassmatch=1

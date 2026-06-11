@@ -3,6 +3,18 @@ Id_1=b1704228-d45d-4d70-9529-38a8b1b293ff
 Number=1
 Rows=1
 
+[Tiling][b1704228-d45d-4d70-9529-38a8b1b293ff][6e6a0f3f-402d-4568-9816-4b16187a438a]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][b1704228-d45d-4d70-9529-38a8b1b293ff][a40a8fe4-861f-4a8e-83bb-8d170b867202]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][b1704228-d45d-4d70-9529-38a8b1b293ff][b762242f-8aaf-499a-a2ed-f49691b7d97a]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][b1704228-d45d-4d70-9529-38a8b1b293ff][ee519036-9dae-482d-a2b0-73c5c6543cef]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
