@@ -1,5 +1,7 @@
 # Lightning-OS
 
+(Autor: Maciej Bronisz)
+
 A collection of Bash scripts and configuration files for optimizing Linux. The goal is to achieve maximum gaming performance and automate cosmetic settings.
 
 The project was created for the CachyOS distribution tailored to my hardware configuration (AMD, Radeon RX 7600). It can be easily modified for other components.
