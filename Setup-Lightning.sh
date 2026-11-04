@@ -71,10 +71,6 @@ done
 # FIX: Zabijamy procesy Wine w tle, aby zapobiec zawieszeniu terminala!
 WINEPREFIX=~/.wine wineserver -k
 
-# 7. NAPRAWA I AUTO-MONTOWANIE DYSKU RZECZY
-echo "Konfiguracja dysku RZECZY..."
-DISK_UUID=$(lsblk -no UUID,LABEL | grep "RZECZY" | awk '{print $1}')
-
 if [ -n "$DISK_UUID" ]; then
     echo "Znaleziono dysk RZECZY (UUID: $DISK_UUID). Naprawiam fstab..."
     sudo sed -i '/RZECZY/d' /etc/fstab
@@ -87,13 +83,15 @@ else
     echo "UWAGA: Linux sprzetowo nie widzi dysku RZECZY!"
 fi
 
-# 8. KONFIGURACJA /ETC/ENVIRONMENT (AMD/Mesa)
-echo "Konfiguracja zmiennych srodowiskowych dla AMD (Mesa)..."
+# 8. KONFIGURACJA /ETC/ENVIRONMENT (AMD / Unreal Engine 5 / DX12)
+echo "Konfiguracja zmiennych srodowiskowych dla AMD..."
 sudo bash -c 'cat <<EOF > /etc/environment
 DXVK_STATE_CACHE=1
 DXVK_STATE_CACHE_PATH=/opt/lightning-os/shaders
 MESA_SHADER_CACHE_DIR=/opt/lightning-os/shaders
-MESA_SHADER_CACHE_MAX_SIZE=0
+MESA_SHADER_CACHE_MAX_SIZE=10G
+RADV_PERFTEST=gpl,sam
+VKD3D_CONFIG=no_upload_hvv
 EOF'
 
 # 9. CENTRUM STEROWANIA LIGHTNING-OS
@@ -181,15 +179,20 @@ Icon=system-run
 Exec=env WINEDLLOVERRIDES="d2d1=d" lightning-run wine "%f" /VERYSILENT
 EOF
 
-# 11. GAMEMODE & ANANICY
-echo "Konfiguracja Ananicy i GameMode..."
+# 11. KONFIGURACJA GAMEMODE DLA i5-9600K
+echo "Konfiguracja GameMode..."
 mkdir -p ~/.config/gamemode
 cat <<EOF > ~/.config/gamemode/gamemode.ini
+[general]
+desiredgov=performance
+igpu_desiredgov=powersave
+softrealtime=auto
+renice=10
+
 [custom]
-start=lightning start
-end=lightning stop
+start=echo "LIGHTNING: ON" > /tmp/lightning_status
+end=echo "LIGHTNING: OFF" > /tmp/lightning_status
 EOF
-# FIX: Usuwamy flage --now z systemctl, aby nie czekał na proces w tle
 sudo systemctl enable ananicy-cpp 2>/dev/null || true
 
 # 12. UNIWERSALNY WRAPPER
