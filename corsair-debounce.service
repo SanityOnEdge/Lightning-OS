@@ -1,0 +1,14 @@
+[Unit]
+Description=Corsair Keyboard Chatter Blocker
+After=ckb-next-daemon.service
+Requires=ckb-next-daemon.service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 2
+ExecStart=/usr/bin/python /usr/local/bin/corsair-debounce.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
